@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} CREDITOS ASISTENCIA ADULTO MAYOR {%endblock%}</title>
+</head>
+<body>
+    <main>
+        {%block content%}
+        CUERPO
+        {%endblock%}
+    </main>
+
+    <div class="botones">
+        <br><br><br>
+        <a href "{%url 'login_estudiante'}" class="button">Soy estudiante</a>
+        <br>
+        <a href "{%url 'login_adultoM'}" class="button">Soy adulto mayor</a>
+        <br>
+        <a href "{%url 'link_video'}" class="button">Video tutorial</a>
+    </div>
+</body>
+</html>
