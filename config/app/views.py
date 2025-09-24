@@ -15,7 +15,7 @@ def login_estudiante(request):
         else:
             form = EstudianteForm()
         return render(request, 'login_estudiante.html',{'form':form})
-    
+'''  
 def login_adultoM(request):
     if request.method == "POST":
         form = AdultoForm(request.POST)
@@ -25,4 +25,4 @@ def login_adultoM(request):
         else:
             form = AdultoForm()
         return render(request, 'login_adultoM.html',{'form':form})
-        
+'''  
