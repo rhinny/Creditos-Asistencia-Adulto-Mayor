@@ -11,11 +11,23 @@ def login_estudiante(request):
         form = EstudianteForm(request.POST)
         if form.is_valid():
             form.save
+            return redirect('agregar_libro') #deberia dirigir a la pestaña de elegir en lo que quiere ayudar, que es otro form
+    else:
+        form = EstudianteForm()
+    return render(request, 'login_estudiante.html',{'form':form})
+
+'''  
+def login_estudiante(request):
+    if request.method == "POST":
+        form = EstudianteForm(request.POST)
+        if form.is_valid():
+            form.save
             return redirect('app') #deberia dirigir a la pestaña de elegir en lo que quiere ayudar, que es otro form
         else:
             form = EstudianteForm()
         return render(request, 'login_estudiante.html',{'form':form})
-'''  
+
+
 def login_adultoM(request):
     if request.method == "POST":
         form = AdultoForm(request.POST)
