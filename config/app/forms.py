@@ -1,5 +1,5 @@
 from django import forms
-from .models import Estudiante_log, Cita
+from .models import *
 
 class EstudianteForm(forms.ModelForm):
     class Meta:

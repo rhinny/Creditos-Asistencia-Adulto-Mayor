@@ -10,6 +10,14 @@ class Estudiante_log(models.Model):
     def __str__(self):
         return f"{self.correo_estudiante} ({self.rol})"
     
+class AdultoM_log(models.Model):
+    correo_adulto = models.CharField(max_length=50)
+    contraseña = models.CharField(max_length=50)
+    rut = models.CharField(max_length=50, primary_key=True)
+
+    def __str__(self):
+        return f"{self.correo_adulto} ({self.rut})"
+
 class Cita(models.Model):
     id_cita=models.AutoField(primary_key=True)
     correo_adulto= models.CharField(max_length=50)

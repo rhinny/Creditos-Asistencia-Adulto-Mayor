@@ -3,7 +3,7 @@ from .forms import *
 from .models import *
 
 def home(request):
-    contexto = {'texto':"hola"}
+    contexto = {'texto':"Home"}
     return render(request, "home.html",contexto)
 
 def login_estudiante(request):
