@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Estudiante_log(models.Model):
+    nombre_completo = models.CharField(max_length=50)
     correo_estudiante = models.CharField(max_length=50)
     contraseña = models.CharField(max_length=50) #relacionarla con la base de datos,
     rol = models.CharField(max_length=50, primary_key=True)

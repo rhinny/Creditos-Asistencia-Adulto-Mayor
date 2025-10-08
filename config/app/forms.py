@@ -4,4 +4,9 @@ from .models import *
 class EstudianteForm(forms.ModelForm):
     class Meta:
         model = Estudiante_log
-        fields = ['correo_estudiante', 'contraseña','rol']
+        fields = ['nombre_completo','correo_estudiante', 'contraseña','rol']
+
+class AdultoMForm(forms.ModelForm):
+    class Meta:
+        model = AdultoM_log
+        fields = ['correo_adulto', 'contraseña','rut']
