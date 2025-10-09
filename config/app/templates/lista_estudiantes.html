@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block title %} Usuarios {% endblock %}
+
+{%block content%}
+    <h1>Usuarios</h1>
+    <ul>
+        {% for estudiante in estudiantes %}
+            <li>{{ estudiante.nombre_completo }} - {{ estudiante.correo_estudiante }} - {{ estudiante.contraseña }}</li>
+        {% empty %}
+            <li>No hay estudiantes registrados.</li>
+        {% endfor %}
+    </ul>
+{%endblock%}
