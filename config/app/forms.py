@@ -10,3 +10,8 @@ class AdultoMForm(forms.ModelForm):
     class Meta:
         model = Usuarios
         fields = ['tipo','rut', 'username', 'email','password']
+
+class RegistroForm(forms.ModelForm):
+    class Meta:
+        model = Usuarios
+        fields = ['tipo','rut','email']
