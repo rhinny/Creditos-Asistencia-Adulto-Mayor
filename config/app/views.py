@@ -19,12 +19,12 @@ def registro(request):
 
 def login_view(request):
     if request.method == "POST":
-        form = CustomAuthenticationForm(data=request.POST)
+        form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             login(request, form.get_user())
             return redirect("home")
     else:
-        form = CustomAuthenticationForm()
+        form = AuthenticationForm()
     return render(request, "usuarios/login.html", {'form':form})
 
 '''

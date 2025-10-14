@@ -17,7 +17,10 @@ class CustomUserCreationForm(UserCreationForm):
         model = Usuarios
         fields = ['tipo','rut','email','username','password1','password2']
 
+'''
+formulario para que pida email o username
 class CustomAuthenticationForm(AuthenticationForm):
     class Meta:
         model = Usuarios
         fields = ['email', 'password']
+'''
