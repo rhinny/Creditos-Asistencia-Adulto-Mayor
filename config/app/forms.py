@@ -1,6 +1,7 @@
 from django import forms
 from .models import *
-
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+'''
 class EstudianteForm(forms.ModelForm):
     class Meta:
         model = Usuarios
@@ -10,8 +11,13 @@ class AdultoMForm(forms.ModelForm):
     class Meta:
         model = Usuarios
         fields = ['tipo','rut', 'username', 'email','password']
-
-class RegistroForm(forms.ModelForm):
+'''
+class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = Usuarios
-        fields = ['tipo','rut','email']
+        fields = ['tipo','rut','email','username','password1','password2']
+
+class CustomAuthenticationForm(AuthenticationForm):
+    class Meta:
+        model = Usuarios
+        fields = ['email', 'password']

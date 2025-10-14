@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import *
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
 
 def home(request):
     contexto = {'texto':"Home"}
@@ -8,25 +9,22 @@ def home(request):
 
 def registro(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        adicional_form = RegistroForm(request.POST)
-        if form.is_valid() and adicional_form.is_valid():
-            form.save()
-            adicional_form.save()
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            login(request, form.save())
             return redirect("home")
     else:
-        form = UserCreationForm()
-        adicional_form = RegistroForm()
-    return render(request, "usuarios/registro.html", {'form':form, 'adicional_form':adicional_form})
+        form = CustomUserCreationForm()
+    return render(request, "usuarios/registro.html", {'form':form})
 
 def login_view(request):
     if request.method == "POST":
-        form = AuthenticationForm(data=request.POST)
+        form = CustomAuthenticationForm(data=request.POST)
         if form.is_valid():
-            #LOGIN HERE
+            login(request, form.get_user())
             return redirect("home")
     else:
-        form = AuthenticationForm()
+        form = CustomAuthenticationForm()
     return render(request, "usuarios/login.html", {'form':form})
 
 '''
